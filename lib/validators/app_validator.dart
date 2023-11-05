@@ -1,11 +1,8 @@
 String? tagValidator(String? value) {
-  final isNumber = num.tryParse(value ?? '');
-  if (isNumber == null) {
-    return 'A tag deve possuir apenas numeros';
-  } else if (value == null || value.isEmpty) {
-    return 'O email não pode ser vazio';
-  } else if (value.length < 14) {
-    return 'A tag deve possuir no minimo 14 caracteres';
+  if (value == null || value.isEmpty) {
+    return 'A tag não pode ser vazia';
+  } else if (value.length != 15) {
+    return 'A tag deve possuir 15 caracteres';
   } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
     return 'A tag deve possuir apenas numeros';
   }
