@@ -38,6 +38,8 @@ class _ListFarmComponentState extends State<ListFarmComponent> {
                           children: [
                             Text(widget.farms[index].name),
                             const Spacer(),
+                            Text(
+                                'Animais: ${cubit.state.cattles.where((element) => element.farmId == widget.farms[index].id).toList().length}'),
                             IconButton(
                               onPressed: () => Navigator.of(context).pushNamed(
                                 Routes.cattle.route,
